@@ -8,22 +8,22 @@ public:
         //2 1 1 1
         //1 1 1
         //1
-        priority_queue<int> pq(stones.begin(), stones.end());
+        priority_queue<int> pq(stones.begin(), stones.end());//O(n)
         // 8,7,4,2,1,1
 
-        while(pq.size() >= 2){
+        while(pq.size() >= 2){//O(n)
             int y = pq.top();
-            pq.pop();
+            pq.pop();//O(log n)
             int x = pq.top();
-            pq.pop();
+            pq.pop();//O(log n)
             int diff = y-x;
             if(diff != 0){
-                pq.push(diff);
+                pq.push(diff);//O(log n)
             }
         }
         if(pq.size() == 0) return 0;
 
-        return pq.top();
+        return pq.top();//O(nlog n)
 
     }
 };
