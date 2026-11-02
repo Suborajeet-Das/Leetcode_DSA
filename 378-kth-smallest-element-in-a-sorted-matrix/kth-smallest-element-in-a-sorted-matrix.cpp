@@ -7,9 +7,11 @@ public:
         int j=0;
 
 
-        for(i=0; i<matrix.size(); i++){
-            
+        for(i=0; i<matrix.size(); i++){   
+            if(pq.size()>=k &&matrix[i][0]>pq.top()) return pq.top();         
             for(j=0; j<matrix[0].size(); j++){
+
+                
                 
                 if(pq.size()>=k && pq.top()>matrix[i][j]){
                     pq.pop();
